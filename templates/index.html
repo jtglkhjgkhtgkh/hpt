@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1 class="mb-4">OpenAI GPT-3 Demo</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.question.label }}
+        {{ form.question(class="form-control") }}
+      </div>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    {% if question %}
+      <hr>
+      <h4>Вопрос:</h4>
+      <p>{{ question }}</p>
+      <h4>Ответ:</h4>
+      <p>{{ answer }}</p>
+    {% endif %}
+  </div>
+{% endblock %}
